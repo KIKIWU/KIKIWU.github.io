@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	div.box {
+		width: 170px;
+		height: 170px;
+		margin-bottom: 30px;
+		border-radius: 100px;
+		border: 15px solid rgba(255,255,255,0.9);
+	}
+	div.box:nth-of-type(1) {
+		opacity: 0.4;
+		transition: opacity 0.6s linear,transform 1s ease-out;
+		background: url(imgtransform31.jpg) center;
+	}
+	div.box:nth-of-type(1):hover {
+		opacity: 1.0;
+		transform:rotate(360deg);
+	}
+	div.box:nth-of-type(2) {
+		background: url(imgtransform2.jpg);
+		background-size: cover;
+		position: relative;
+	}
+	div.box:nth-of-type(2):hover .info {
+        opacity: 1;
+		transform: scale(4.0);
+        border-radius: 100px;
+	}
+	div.box:nth-of-type(2)>.info{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -25px;
+		margin-top: -25px;
+	    opacity: 0;
+        width: 50px;
+        height: 50px;
+	    border-radius: 25px;
+        transform-origin: center;
+		transition: transform 0.5s ease;
+        
+        background: rgba(0,0,0,0.2);
+	}
+	div.box>.info p {
+		font-size: 12px;
+		text-align: center;
+	}
+	div.box:nth-of-type(3) {
+		background-image: url(imgtransform27.jpg);
+		background-size: cover;
+		position: relative;
+		overflow: hidden;
+	}
+	div.box:nth-of-type(3):hover .take {
+        opacity: 1;
+		height: 170px;
+	}
+	div.box:nth-of-type(3)>.take{
+		width: 170px;
+        height: 0px;
+        transform-origin: center;
+		transition: height 0.5s linear;      
+        background: rgba(0,0,0,0.4);
+	}
+	
+	div.box:nth-of-type(4) {
+		background-image: url(imgtransform3.jpg);
+		background-size: cover;
+		position: relative;
+		/*overflow: hidden;*/
+		transform-style:preserve-3d;
+		transform: rotateX(0deg);
+        transform-origin:bottom;
+        
+        
+	}
+	div.box:nth-of-type(4):hover {
+        transition: all 0.5s linear;
+		transform: translateY(-200px) rotateX(90deg) ;
+        opacity: 0.5;
+	}
+div.box:nth-of-type(4):hover +div {
+        transition: all 0.5s linear;
+		transform:  rotateX(0deg);
+       
+	}
+	div.box:nth-of-type(5){
+		background: rgba(0,0,0,0.9);
+		position: relative;
+		top: -230px;
+		-webkit-transform-style:preserve-3d;		
+        -webkit-transform-origin:bottom;
+        transform: rotateX(90deg);
+        transition: transform 1s linear;
+        width: 200px;
+		height: 200px;
+		margin-bottom: 30px;
+		border-radius: 100px;
+		border: 0px;
+	}
+	div.box:nth-of-type(5) p {
+		position: relative;
+		top: 50%;
+		font-weight: bolder;
+		color: #fff;
+		text-align: center;
+	}
+	.container {
+		perspective-origin: 50% 50%;
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box">
+			<div class="info">
+				<p>my love</p>
+			</div>
+		</div>
+		<div class="box">
+			<div class="take"></div>
+		</div>
+		<div class="box change"></div>
+		<div class="box change">
+			<p>Good Night</p>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	var s="test";
+	var S = new String(s);
+	// for (var i = 0; i < 10; i++) 
+	// 	console.log(i);
+	for (var i = 0,j=10; i < 10; i++,j--) {
+		console.log(i +"+" +j+"="+i*j);
+	}
+	console.log(i);
+	// console.log(typeof S);
+</script>
+</html>
